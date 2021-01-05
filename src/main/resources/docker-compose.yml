@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 services:
 
@@ -17,7 +17,7 @@ services:
         ipv4_address: 172.28.1.4
       
   db:
-    image:  postgres11:db_tienda
+    image:  postgres:11
     networks:
       demonet:
         ipv4_address: 172.28.1.3
