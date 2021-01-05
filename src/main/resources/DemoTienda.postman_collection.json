@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "1af8ec12-767c-4f2c-84ad-3fe1800b2cda",
+		"name": "DemoTienda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"jPerez@gmail.com\",\n    \"password\": \"12346\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CLiente registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY0MzM4LCJleHAiOjE2MDk5NTA3Mzh9.yP8HQLItsue_i1COrEAklUM_d_7TMAoAU6jwyCRK5Dr6hY-m_F-KLGG5cbOjsEEW_Gm4OUySLJDkh9QSBFQxIw",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"cperez@gmail.com\",\n    \"password\": \"123456\",\n    \"nombre\": \"Carlos\",\n    \"apellido\": \"Perez\",\n    \"dni\": \"11111111\",\n    \"telefono\": \"555555\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY1MDIwLCJleHAiOjE2MDk5NTE0MjB9.2Rer6cQFo__ieyYgCALWaayuNdzjnKutBT63bVQGaBGWRkV12zvA47JbHAI0e2LlHQKpimZh0p8E1zikwLb1HQ"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"MOitor Microsof\",\n    \"precio\": 300.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venta registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY3MzY3LCJleHAiOjE2MDk5NTM3Njd9.iZWXEA75UnsY6VGDMr3-S8YnrZjGiFBYVpYXvRNXmK693l1_tFsOMMxRoo3wNkkgx_Wyskuq7X299I5mHfiGYA"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cliente\": {\n        \"id\": 1\n    },\n    \"detalle\": [\n       {\n           \"producto\": {\n               \"id\": 1\n           } ,\n           \"cantidad\": 2\n       } \n    ]\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ventas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ventas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venta busqueda por id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY3MzY3LCJleHAiOjE2MDk5NTM3Njd9.iZWXEA75UnsY6VGDMr3-S8YnrZjGiFBYVpYXvRNXmK693l1_tFsOMMxRoo3wNkkgx_Wyskuq7X299I5mHfiGYA"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/ventas/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ventas",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venta busqueda por cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY3MzY3LCJleHAiOjE2MDk5NTM3Njd9.iZWXEA75UnsY6VGDMr3-S8YnrZjGiFBYVpYXvRNXmK693l1_tFsOMMxRoo3wNkkgx_Wyskuq7X299I5mHfiGYA"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/ventas/buscarPorCliente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ventas",
+						"buscarPorCliente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto actualizacion",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY1MDIwLCJleHAiOjE2MDk5NTE0MjB9.2Rer6cQFo__ieyYgCALWaayuNdzjnKutBT63bVQGaBGWRkV12zvA47JbHAI0e2LlHQKpimZh0p8E1zikwLb1HQ"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"id\": 2,\n        \"nombre\": \"Monitor Microsof\",\n        \"precio\": 350.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY1MDIwLCJleHAiOjE2MDk5NTE0MjB9.2Rer6cQFo__ieyYgCALWaayuNdzjnKutBT63bVQGaBGWRkV12zvA47JbHAI0e2LlHQKpimZh0p8E1zikwLb1HQ"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/productos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY1MDIwLCJleHAiOjE2MDk5NTE0MjB9.2Rer6cQFo__ieyYgCALWaayuNdzjnKutBT63bVQGaBGWRkV12zvA47JbHAI0e2LlHQKpimZh0p8E1zikwLb1HQ"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/productos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto listar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqUGVyZXpAZ21haWwuY29tIiwiaWF0IjoxNjA5ODY1MDIwLCJleHAiOjE2MDk5NTE0MjB9.2Rer6cQFo__ieyYgCALWaayuNdzjnKutBT63bVQGaBGWRkV12zvA47JbHAI0e2LlHQKpimZh0p8E1zikwLb1HQ"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
